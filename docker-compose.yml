@@ -1,0 +1,19 @@
+version: '3.6'
+services:
+  vue:
+    container_name: test-react-cont
+    image: 'node:17-alpine3.14'
+    working_dir: /home/node/app
+    command: 
+      - /bin/sh
+      - '-c'
+      - 'npm install && npm start'
+    ports:
+      - '3000:3000'
+    volumes:
+      - './test-react-app:/home/node/app'
+
+
+       # docker run -ti --rm -v ${PWD}:/home/node/app -w /home/node/app node /bin/bash
+       # yarn global add create-react-app
+       # create-react-app test-react-app
